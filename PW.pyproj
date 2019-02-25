@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>00558726-32a1-4f87-807e-4e43a3be4f47</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>launcher.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>PW</Name>
+    <RootNamespace>PW</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="bin\main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="bin\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\settings.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="launcher.py" />
+    <Compile Include="scr\bullet.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scr\enemy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scr\myplane.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scr\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="config\" />
+    <Folder Include="material\" />
+    <Folder Include="material\image\" />
+    <Folder Include="material\sound\" />
+    <Folder Include="scr\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="material\image\background.png" />
+    <Content Include="material\image\bomb.png" />
+    <Content Include="material\image\btn_finish.png" />
+    <Content Include="material\image\bullet1.png" />
+    <Content Include="material\image\bullet2.png" />
+    <Content Include="material\image\dog1.png" />
+    <Content Include="material\image\dog2.png" />
+    <Content Include="material\image\dogdown1.png" />
+    <Content Include="material\image\dogdown2.png" />
+    <Content Include="material\image\enemy1.png" />
+    <Content Include="material\image\enemy1_down1.png" />
+    <Content Include="material\image\enemy1_down2.png" />
+    <Content Include="material\image\enemy1_down3.png" />
+    <Content Include="material\image\enemy1_down4.png" />
+    <Content Include="material\image\enemy2.png" />
+    <Content Include="material\image\enemy2_down1.png" />
+    <Content Include="material\image\enemy2_down2.png" />
+    <Content Include="material\image\enemy2_down3.png" />
+    <Content Include="material\image\enemy2_down4.png" />
+    <Content Include="material\image\enemy2_hit.png" />
+    <Content Include="material\image\enemy3_down1.png" />
+    <Content Include="material\image\enemy3_down2.png" />
+    <Content Include="material\image\enemy3_down3.png" />
+    <Content Include="material\image\enemy3_down4.png" />
+    <Content Include="material\image\enemy3_down5.png" />
+    <Content Include="material\image\enemy3_down6.png" />
+    <Content Include="material\image\enemy3_hit.png" />
+    <Content Include="material\image\enemy3_n1.png" />
+    <Content Include="material\image\enemy3_n2.png" />
+    <Content Include="material\image\game_loading1.png" />
+    <Content Include="material\image\game_loading2.png" />
+    <Content Include="material\image\game_loading3.png" />
+    <Content Include="material\image\game_loading4.png" />
+    <Content Include="material\image\game_over.png" />
+    <Content Include="material\image\game_pause_nor.png" />
+    <Content Include="material\image\game_pause_pressed.png" />
+    <Content Include="material\image\game_resume_nor.png" />
+    <Content Include="material\image\game_resume_pressed.png" />
+    <Content Include="material\image\hero1.png" />
+    <Content Include="material\image\hero2.png" />
+    <Content Include="material\image\hero_blowup_n1.png" />
+    <Content Include="material\image\hero_blowup_n2.png" />
+    <Content Include="material\image\hero_blowup_n3.png" />
+    <Content Include="material\image\hero_blowup_n4.png" />
+    <Content Include="material\image\life.png" />
+    <Content Include="material\image\shoot_copyright.png" />
+    <Content Include="material\image\ufo1.png" />
+    <Content Include="material\image\ufo2.png" />
+    <Content Include="material\play.jpg" />
+    <Content Include="material\sound\achievement.mp3" />
+    <Content Include="material\sound\achievement.wav" />
+    <Content Include="material\sound\big_spaceship_flying.mp3" />
+    <Content Include="material\sound\big_spaceship_flying.wav" />
+    <Content Include="material\sound\bullet.mp3" />
+    <Content Include="material\sound\bullet.wav" />
+    <Content Include="material\sound\button.mp3" />
+    <Content Include="material\sound\button.wav" />
+    <Content Include="material\sound\enemy1_down.mp3" />
+    <Content Include="material\sound\enemy1_down.wav" />
+    <Content Include="material\sound\enemy2_down.mp3" />
+    <Content Include="material\sound\enemy2_down.wav" />
+    <Content Include="material\sound\enemy2_out.wav" />
+    <Content Include="material\sound\enemy3_down.mp3" />
+    <Content Include="material\sound\enemy3_down.wav" />
+    <Content Include="material\sound\game_music.mp3" />
+    <Content Include="material\sound\game_music.wav" />
+    <Content Include="material\sound\game_over.mp3" />
+    <Content Include="material\sound\game_over.wav" />
+    <Content Include="material\sound\get_bomb.mp3" />
+    <Content Include="material\sound\get_bomb.wav" />
+    <Content Include="material\sound\get_double_laser.mp3" />
+    <Content Include="material\sound\get_double_laser.wav" />
+    <Content Include="material\sound\out_porp.mp3" />
+    <Content Include="material\sound\use_bomb.mp3" />
+    <Content Include="material\sound\use_bomb.wav" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
+  <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

@@ -1,0 +1,50 @@
+cmd进入项目主文件所在目录，输入： 
+pyinstaller launcher.py bin\__init__.py bin\main.py config\__init__.py config\settings.py scr\__init__.py scr\bullet.py scr\enemy.py scr\myplane.py
+若想只生成一个exe文件，在结尾加上 -F --onefile，例如：
+pyinstaller main.py bin/re1.py -F --onefile
+
+
+这时打包出来的exe文件运行是不成功的，因为根据.py文件中的相关代码，在exe文件所在文件夹内，找不到image和sound文件夹，因此
+加载不到所需的音频和图像文件，但会生成一个.spec文件，里面保存着打包的执行信息，通过修改该文件可以对打包方式进行修改，包括添加
+附加文件等内容。
+
+打开.spec文件，在block_cipher = None后，添加：
+
+added_files = [
+         ( 'material/image', 'image'),        #复制 “项目主文件所在目录（cmd当前运行目录）\material\image” 文件夹，并在打包时命名为的image文件夹，放至打包后exe文件所在目录。    
+         ( 'material/sound', 'sound')          #复制 “项目主文件所在目录\material\sound” 文件夹，并在打包时命名为的sound文件夹，放至打包后exe文件所在目录。
+         ]
+
+然后将Analysis中的datas = [],  改为 datas=added_files, 
+保存后进入进入项目主文件所在目录（修改后的.spec文件所在目录），输入：
+
+pyinstaller launcher.spec 
+
+这时会询问是否覆盖原有项目打包文件，选择是，打包成功，且在exe所在目录下生成了image和sound文件夹，通过相关代码可以加载其中的文件，
+程序能够运行成功。
+
+参考：https://stackoverflow.com/questions/41204057/pygame-not-loading-png-after-making-exe-with-pyinstaller
+          http://pyinstaller.readthedocs.io/en/stable/spec-files.html?highlight=data#adding-data-files
+
+
+打包时提示找不到：setuptools._vendor
+
+执行：conda install -c anaconda setuptools 
+
+若提示连接错误无法安装
+找到anaconda的镜像配置文件.condarc，添加清华的镜像，删除里面的-defaults
+
+打包时报错：RecursionError: maximum recursion depth exceeded
+打开生成的.spec文件，在头部添加：
+import sys
+sys.setrecursionlimit(5000)
+然后基于这个.spec文件进行打包：
+pyinstaller xxx.spec
+参考：https://blog.csdn.net/Sagittarius_Warrior/article/details/78457824
+
+打包时报错：
+Original error was: cannot import name 'multiarray'
+numpy模块的问题，pip uninstall numpy （必要时pip install numpy）即可
+
+升级pandas pip install pandas --upgrade
+
